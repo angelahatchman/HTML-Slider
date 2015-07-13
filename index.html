@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="eu">
+<head>
+<meta charset="utf-8" />
+<title>Owl Carousel Project</title>
+<style type="text/css">
+
+header,footer{
+  width:100%;
+  height:100px;
+  background: #ffffff;
+}
+article.content {
+  background: #ffffff;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+  width:900px;
+  } 
+section.slider1, section.slider2 {
+  display:block;
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+.slider2{
+  height: 400px;
+  background: #ffffff url(images/three.jpg) no-repeat left top;
+}
+div.one-item, #owl1.owl-carousel {
+  height:450px;
+  width:450px;
+}
+div.one-item{
+  float:left;
+  background: #ffffff url(images/single.jpg) no-repeat left top;
+}
+#owl1.owl-carousel {
+  float:right;
+}
+.owl-nav {
+  position:relative
+}
+#owl1 div.owl-prev, #owl1 div.owl-next, #owl2 div.owl-next, #owl2 div.owl-prev{
+  background: #ffffff;
+  border-radius:15px;
+  cursor: pointer;
+  padding: 12px 15px;
+  position:absolute;
+}
+#owl1 div.owl-prev, #owl1 div.owl-next{
+  top:150px;
+}
+#owl1 div.owl-prev {
+  float:left;
+  margin-left:50px;
+  left:-30px;
+}
+#owl1 div.owl-next {
+  float:right;
+  right:20px;
+}
+#owl2 div.owl-next, #owl2 div.owl-prev{
+  top:225px;
+}
+#owl2 {
+  padding:140px 20px 0 40px;
+}
+#owl2 div.owl-prev {
+  left:0px;
+}
+#owl2 div.owl-next {
+  right:60px;
+}
+#owl2 .item img {
+  display:absolute;
+  top:0px;
+  width:210px;
+  height:380px;
+}
+.clear {
+  display:block;
+  height:26px
+}
+a img {
+  border: 0;
+}
+</style>
+</head>
+<body>
+  <article class="content"><!-- The article -->
+    <header></header>
+    <section class="slider1"><!-- Single item content and Owl1 carousel -->
+    <div class="one-item"></div>
+      <div id="owl1" class="owl-carousel">
+        <div class="items"><a href="#"><img src="images/carousel/1.jpg" alt="1" width="450" height="450" /></a></div>
+        <div class="items"><a href="#"><img src="images/carousel/2.jpg" alt="1" width="450" height="450" /></a></div>
+        <div class="items"><a href="#"><img src="images/carousel/3.jpg" alt="1" width="450" height="450" /></a></div>
+      </div>
+    </section><!-- /Single item -->
+    <div class="clear"></div><!-- White space -->
+    <section class="slider2"><!-- Three items owl2 carousel -->
+      <div id="owl2" class="owl-carousel">
+        <div class="items"><a href=""><img src="images/carousel2/1.jpg" alt="1" width="210" height="210" /></a></div>
+        <div class="items"><a href=""><img src="images/carousel2/2.jpg" alt="1" width="210" height="210" /></a></div>
+        <div class="items"><a href=""><img src="images/carousel2/3.jpg" alt="1" width="210" height="210" /></a></div>
+        <div class="items"><a href=""><img src="images/carousel2/4.jpg" alt="1" width="210" height="210" /></a></div>
+        <div class="items"><a href=""><img src="images/carousel2/5.jpg" alt="1" width="210" height="210" /></a></div>
+        <div class="items"><a href=""><img src="images/carousel2/6.jpg" alt="1" width="210" height="210" /></a></div>
+      </div>
+    </section><!-- / Three Items -->
+  <footer></footer>
+</article><!-- / The content --> 
+<link href="carousel/assets/carousel.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="carousel/carousel.js"></script>
+<script>
+
+$(document).ready(function(){
+
+// Owl carousel first, single item rotating
+$("#owl1").owlCarousel({
+      items : 1,
+      loop : false,
+    navigation: true,
+    navigationText: [
+        "<strong><</strong>",
+        "<strong>></strong>"
+        ],
+    dots: false,
+    rewindNav : true,
+    rewindSpeed : 200
+});   
+// Owl carousel three items, rotating
+$("#owl2").owlCarousel({
+      items : 3,
+    scrollPerPage : true,
+    slideBy: 3,
+    navigation : true,
+    navigationText: [
+        "<strong><</strong>",
+        "<strong>> </strong>"
+        ],
+    dots: false,
+    loop : false,
+    rewindNav : true,
+    rewindSpeed : 200
+      });
+});
+</script>
+</body>
+</html>
